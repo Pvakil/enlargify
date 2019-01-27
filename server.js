@@ -33,13 +33,13 @@ io.sockets.on("connection", function(socket) {
   socket.on("init_user", function(userData){
     // update the list of users
     userList[socket.id] = {"id": socket.id, "name": userData.name};
-    
+
     // send the connected user list to the new user
     socket.emit("ui_user_set", userList);
     // send the new user to the all other users
     socket.broadcast.emit("ui_user_add", userList[socket.id]);
   });
-  
+
   socket.on("next_user", function() {
     if(waitingList[socket.id]) return;
 
@@ -54,7 +54,7 @@ io.sockets.on("connection", function(socket) {
       partnerSocket = io.sockets.socket(socket.partnerId);
       partnerSocket.partnerId = socket.id;
       partnerSocket.emit("connect_partner", {'caller':true, 'partnerId': socket.id});
-      
+
       // delete the partner from the waiting list
       delete waitingList[socket.partnerId];
     }
@@ -65,16 +65,16 @@ io.sockets.on("connection", function(socket) {
 // socket.on("disconnect",function(){}) will not work
 // use easyrtc event listener for disconnect
 easyrtc.events.on("disconnect", function(connectionObj, next){
-  // call the default disconnect method 
+  // call the default disconnect method
   easyrtc.events.emitDefault("disconnect", connectionObj, next);
 
   var socket = connectionObj.socket;
-  var id = socket.id; 
+  var id = socket.id;
   // clear the server side variables
   socketCount--;
   delete userList[id];
   delete waitingList[id];
-  
+
   // adjust the client side
   io.sockets.emit("ui_user_remove", id);
   if (socket.partnerId){
