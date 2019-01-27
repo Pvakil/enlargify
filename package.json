@@ -1,18 +1,14 @@
 {
-  "name": "enlargify",
-  "description": "Chat application using EasyRTC",
-  "version": "0.0.1",
-  "dependencies": {
-    "express": "3.x",
-    "easyrtc": "1.0.x",
-    "socket.io": "0.9.x"
-  },
+  "name": "y",
+  "version": "1.0.0",
+  "description": "uh",
+  "main": "myserver.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": ">=0.8"
-  },
-  "author": "merictaze",
-  "license": "MIT"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
