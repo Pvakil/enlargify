@@ -160,11 +160,11 @@
                     button.innerHTML = 'Join';
                     button.id = userid;
                     button.style.float = 'right';
+                    peer.startBroadcasting();
                     button.onclick = function() {
                         button = this;
                         getUserMedia(function(stream) {
                             peer.addStream(stream);
-                            peer.sendParticipationRequest(button.id);
                         });
                         button.disabled = true;
                     };
