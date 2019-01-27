@@ -1,0 +1,157 @@
+
+
+body {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: skyblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.btn_3d {
+  display: block;
+  margin: 0 auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  width: 75px;
+}
+
+.btn_3d * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.btn_3d>span {
+  background: white;
+  border: none;
+  -webkit-box-shadow: 1px 73px 41px -22px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 73px 41px -22px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  display: block;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+  -webkit-transform: rotateX(40deg);
+  transform: rotateX(40deg);
+  outline: 1px solid transparent;
+  padding: 18px;
+  position: relative;
+  width: 100%;
+}
+
+.btn_3d>span:after {
+  background: #CCCCCC;
+  content: "";
+  height: 40%;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.btn_3d>span>span {
+  display: block;
+  height: 40px;
+  position: relative;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  width: 40px;
+}
+
+.btn_3d>span>span {
+background-image: image-url("circle.png");
+}
+
+.btn_3d>span>span:before,
+.btn_3d>span>span:after {
+  content: "";
+  border-radius: 2px;
+  display: block;
+  width: 85%;
+  height: 25%;
+  position: absolute;
+  top: 37%;
+  left: 8%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: black;
+}
+
+.btn_3d>span>span:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.btn_3d>span:hover,
+.btn_3d>span:focus {
+  background: #F6F6F6;
+  -webkit-box-shadow: 1px 73px 41px -22px black;
+  box-shadow: 1px 73px 41px -22px black;
+  color: #ED8728;
+  -webkit-transform: rotateX(30deg);
+  transform: rotateX(30deg);
+}
+
+.btn_3d>span:hover:after,
+.btn_3d>span:focus:after {
+  background: #BEBEBE;
+}
+
+.btn_3d>span:hover>span:before,
+.btn_3d>span:hover>span:after,
+.btn_3d>span:focus>span:before,
+.btn_3d>span:focus>span:after {
+  width: 62%;
+}
+
+.btn_3d>span:hover>span:before,
+.btn_3d>span:focus>span:before {
+  -webkit-transform: rotate(180deg) translate(0, 0);
+  transform: rotate(180deg) translate(0, 0);
+}
+
+.btn_3d>span:hover>span:after,
+.btn_3d>span:focus>span:after {
+  -webkit-transform: rotate(-180deg) translate(-37.5%, 0);
+  transform: rotate(-180deg) translate(-37.5%, 0);
+}
+
+.btn_3d>span:active {
+  -webkit-transform: rotateX(20deg);
+  transform: rotateX(20deg);
+}
+
+.btn_3d>span:active>span:before,
+.btn_3d>span:active>span:after {
+  background: skyblue;
+}
+
+.btn_3d.active>span>span:before,
+.btn_3d.active>span>span:after {
+  width: 62%;
+}
+
+.btn_3d.active>span>span:before {
+  -webkit-transform: rotate(180deg) translate(0, 0);
+  transform: rotate(180deg) translate(0, 0);
+}
+
+.btn_3d.active>span>span:after {
+  -webkit-transform: rotate(-180deg) translate(-37.5%, 0);
+  transform: rotate(-180deg) translate(-37.5%, 0);
+}

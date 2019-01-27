@@ -1,0 +1,39 @@
+@import "materialize";
+
+
+
+body
+{
+	background: #c9c9c9;
+}
+
+h5
+{
+	font-weight: 400;
+}
+
+.container
+{
+	margin-top: 80px;
+	width: 500px;
+	height: 800px;
+  position: relative;
+}
+
+.tabs .indicator
+{
+	background-color: #e0f2f1;
+	height: 100px;
+	opacity: 0.3;
+}
+
+.form-container
+{
+	padding: 40px;
+	padding-top: 10px;
+}
+
+.confirmation-tabs-btn
+{
+	position: relative;
+}
